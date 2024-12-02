@@ -22,35 +22,35 @@ func main() {
 	safeReports := 0
 	//scanIndex := 0
 	for scanner.Scan() {
-		numbers := strings.Fields(scanner.Text())
-		var reports []int
-		for _, number := range numbers {
+		report := strings.Fields(scanner.Text())
+		var levels []int
+		for _, number := range report {
 			n, _ := strconv.Atoi(number)
-			reports = append(reports, n)
+			levels = append(levels, n)
 		}
 
-		prevReport := 0
+		prevLevel := 0
 		prevDifference := 0
 		incrementSafeReport := true
 		//fmt.Printf("going to process %d\n", reports)
-		for index, report := range reports {
+		for index, level := range levels {
 			if index == 0 {
-				prevReport = report
+				prevLevel = level
 			} else {
-				//fmt.Printf("prevReport: %d\n", prevReport)
-				//fmt.Printf("report: %d\n", report)
+				//fmt.Printf("prevLevel: %d\n", prevLevel)
+				//fmt.Printf("level: %d\n", level)
 
-				difference := report - prevReport
+				difference := level - prevLevel
 				//fmt.Printf("prevDifference: %d\n", prevDifference)
 				//fmt.Printf("difference: %d\n\n", difference)
 
 				if (index == 1 && difference == 0) || (index > 1 && !(difference != 0 && ((prevDifference < 0 && difference < 0) || (prevDifference > 0 && difference > 0)))) {
 					//fmt.Printf("%d is unsafe because the prevDifference and difference are different signs\nprevDifference: %d\ndifference: %d\n", reports, prevDifference, difference)
-					//fmt.Printf("current report: %d\nprevReport: %d\n\n", report, prevReport)
+					//fmt.Printf("current level: %d\nprevLevel: %d\n\n", level, prevLevel)
 					incrementSafeReport = false
 				} else {
 					prevDifference = difference
-					prevReport = report
+					prevLevel = level
 				}
 
 				if difference < 0 {
@@ -58,7 +58,7 @@ func main() {
 				}
 				if difference < 1 || difference > 3 {
 					//fmt.Printf("%d is unsafe because of the difference is too big or 0.\ndifference: %d\n\n", reports, difference)
-					//fmt.Printf("current report: %d\nprevReport: %d\n\n", report, prevReport)
+					//fmt.Printf("current level: %d\nprevLevel: %d\n\n", level, prevLevel)
 					incrementSafeReport = false
 				}
 			}
