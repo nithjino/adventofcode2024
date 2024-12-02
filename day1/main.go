@@ -45,7 +45,7 @@ func main() {
 		if distance < 0 {
 			distance = distance * -1
 		}
-		totalDistanceSum = totalDistanceSum + distance
+		totalDistanceSum += distance
 	}
 	fmt.Printf("total distance sum: %d\n", totalDistanceSum)
 
@@ -57,7 +57,7 @@ func main() {
 					counter++
 				}
 			}
-			similarityScore = similarityScore + (leftValue * counter)
+			similarityScore += (leftValue * counter)
 		}
 	}
 	fmt.Printf("similarity score: %d\n", similarityScore)
