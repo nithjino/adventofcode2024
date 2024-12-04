@@ -29,9 +29,32 @@ func main() {
 
 	sum := 0
 	regexPatternDigits := regexp.MustCompile(`\d{1,3}`)
+
 	for _, match := range matches {
 		numberPair := regexPatternDigits.FindAllString(match, -1)
 		sum += IgnoreError(strconv.Atoi(numberPair[0])) * IgnoreError(strconv.Atoi(numberPair[1]))
 	}
+
 	fmt.Printf("Part 1: %d\n", sum)
+
+	sum = 0
+	regexPattern = regexp.MustCompile(`(do\(\))|(don't\(\))|(mul\(\d{1,3},\d{1,3}\))`)
+
+	matches = regexPattern.FindAllString(string(corruptedMemoryBytes), -1)
+
+	addMul := true
+	for _, match := range matches {
+		if match == "don't()" {
+			addMul = false
+		} else if match == "do()" {
+			addMul = true
+		} else {
+			if addMul {
+				numberPair := regexPatternDigits.FindAllString(match, -1)
+				sum += IgnoreError(strconv.Atoi(numberPair[0])) * IgnoreError(strconv.Atoi(numberPair[1]))
+			}
+		}
+	}
+
+	fmt.Printf("Part 2: %d\n", sum)
 }
