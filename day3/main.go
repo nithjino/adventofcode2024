@@ -44,11 +44,13 @@ func main() {
 
 	addMul := true
 	for _, match := range matches {
-		if match == "don't()" {
+
+		switch match {
+		case "don't()":
 			addMul = false
-		} else if match == "do()" {
+		case "do()":
 			addMul = true
-		} else {
+		default:
 			if addMul {
 				numberPair := regexPatternDigits.FindAllString(match, -1)
 				sum += IgnoreError(strconv.Atoi(numberPair[0])) * IgnoreError(strconv.Atoi(numberPair[1]))
