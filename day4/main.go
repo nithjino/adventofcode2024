@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"log"
 	"os"
-	"slices"
+	"strconv"
 	"strings"
 )
 
@@ -20,7 +20,7 @@ func arrayToString(a []int, delim string) string {
 }
 
 func main() {
-	f, err := os.Open("day4.txt")
+	f, err := os.Open("sample.txt")
 
 	if err != nil {
 		log.Fatalln(err)
@@ -38,7 +38,6 @@ func main() {
 
 	lastRow := len(wordSeachPuzzle) - 1
 	lastColumn := len(wordSeachPuzzle[0]) - 1
-	matchesDict := make(map[string]bool)
 	matches := 0
 
 	for row := range wordSeachPuzzle {
@@ -56,22 +55,11 @@ func main() {
 				tempSolution += wordSeachPuzzle[row][column+3]
 				if tempSolution == "XMAS" || tempSolution == "SAMX" {
 					matches++
-
-					tempSolutionCoords := []int{row, column}
-					tempSolutionCoords = append(tempSolutionCoords, row, column+1)
-					tempSolutionCoords = append(tempSolutionCoords, row, column+2)
-					tempSolutionCoords = append(tempSolutionCoords, row, column+3)
-					fmt.Printf("forward match temp solution: %s\n", tempSolution)
-					fmt.Printf("match found at %d\n", tempSolutionCoords)
-					slices.Sort(tempSolutionCoords)
-					fmt.Printf("sorted tempCoords: %d\n", tempSolutionCoords)
-					fmt.Printf("string sorted tempCoords: %s\n", arrayToString(tempSolutionCoords, ""))
-					if !matchesDict[arrayToString(tempSolutionCoords, "")] {
-						matchesDict[arrayToString(tempSolutionCoords, "")] = true
-						fmt.Println("")
-					} else {
-						fmt.Printf("match with those coords already found: %s\n\n", arrayToString(tempSolutionCoords, ""))
-					}
+					tempSolutionCoords := strconv.Itoa(row) + "," + strconv.Itoa(column) + " "
+					tempSolutionCoords += strconv.Itoa(row) + "," + strconv.Itoa(column+1) + " "
+					tempSolutionCoords += strconv.Itoa(row) + "," + strconv.Itoa(column+2) + " "
+					tempSolutionCoords += strconv.Itoa(row) + "," + strconv.Itoa(column+3)
+					fmt.Printf("found forward solution at: %s\n\n", tempSolutionCoords)
 				}
 			}
 			//check backward
@@ -82,22 +70,11 @@ func main() {
 				tempSolution += wordSeachPuzzle[row][column-3]
 				if tempSolution == "XMAS" || tempSolution == "SAMX" {
 					matches++
-
-					tempSolutionCoords := []int{row, column}
-					tempSolutionCoords = append(tempSolutionCoords, row, column-1)
-					tempSolutionCoords = append(tempSolutionCoords, row, column-2)
-					tempSolutionCoords = append(tempSolutionCoords, row, column-3)
-					fmt.Printf("backward match temp solution: %s\n", tempSolution)
-					fmt.Printf("match found at %d\n", tempSolutionCoords)
-					slices.Sort(tempSolutionCoords)
-					fmt.Printf("sorted tempCoords: %d\n", tempSolutionCoords)
-					fmt.Printf("string sorted tempCoords: %s\n", arrayToString(tempSolutionCoords, ""))
-					if !matchesDict[arrayToString(tempSolutionCoords, "")] {
-						matchesDict[arrayToString(tempSolutionCoords, "")] = true
-						fmt.Println("")
-					} else {
-						fmt.Printf("match with those coords already found: %s\n\n", arrayToString(tempSolutionCoords, ""))
-					}
+					tempSolutionCoords := strconv.Itoa(row) + "," + strconv.Itoa(column) + " "
+					tempSolutionCoords += strconv.Itoa(row) + "," + strconv.Itoa(column-1) + " "
+					tempSolutionCoords += strconv.Itoa(row) + "," + strconv.Itoa(column-2) + " "
+					tempSolutionCoords += strconv.Itoa(row) + "," + strconv.Itoa(column-3)
+					fmt.Printf("found backward solution at: %s\n\n", tempSolutionCoords)
 				}
 			}
 			//check up
@@ -108,22 +85,11 @@ func main() {
 				tempSolution += wordSeachPuzzle[row-3][column]
 				if tempSolution == "XMAS" || tempSolution == "SAMX" {
 					matches++
-
-					tempSolutionCoords := []int{row, column}
-					tempSolutionCoords = append(tempSolutionCoords, row-1, column)
-					tempSolutionCoords = append(tempSolutionCoords, row-2, column)
-					tempSolutionCoords = append(tempSolutionCoords, row-3, column)
-					fmt.Printf("up match temp solution: %s\n", tempSolution)
-					fmt.Printf("match found at %d\n", tempSolutionCoords)
-					slices.Sort(tempSolutionCoords)
-					fmt.Printf("sorted tempCoords: %d\n", tempSolutionCoords)
-					fmt.Printf("string sorted tempCoords: %s\n", arrayToString(tempSolutionCoords, ""))
-					if !matchesDict[arrayToString(tempSolutionCoords, "")] {
-						matchesDict[arrayToString(tempSolutionCoords, "")] = true
-						fmt.Println("")
-					} else {
-						fmt.Printf("match with those coords already found: %s\n\n", arrayToString(tempSolutionCoords, ""))
-					}
+					tempSolutionCoords := strconv.Itoa(row) + "," + strconv.Itoa(column) + " "
+					tempSolutionCoords += strconv.Itoa(row-1) + "," + strconv.Itoa(column) + " "
+					tempSolutionCoords += strconv.Itoa(row-2) + "," + strconv.Itoa(column) + " "
+					tempSolutionCoords += strconv.Itoa(row-3) + "," + strconv.Itoa(column)
+					fmt.Printf("found up solution at: %s\n\n", tempSolutionCoords)
 				}
 			}
 			//check down
@@ -134,22 +100,11 @@ func main() {
 				tempSolution += wordSeachPuzzle[row+3][column]
 				if tempSolution == "XMAS" || tempSolution == "SAMX" {
 					matches++
-
-					tempSolutionCoords := []int{row, column}
-					tempSolutionCoords = append(tempSolutionCoords, row+1, column)
-					tempSolutionCoords = append(tempSolutionCoords, row+2, column)
-					tempSolutionCoords = append(tempSolutionCoords, row+3, column)
-					fmt.Printf("down match temp solution: %s\n", tempSolution)
-					fmt.Printf("match found at %d\n", tempSolutionCoords)
-					slices.Sort(tempSolutionCoords)
-					fmt.Printf("sorted tempCoords: %d\n", tempSolutionCoords)
-					fmt.Printf("string sorted tempCoords: %s\n", arrayToString(tempSolutionCoords, ""))
-					if !matchesDict[arrayToString(tempSolutionCoords, "")] {
-						matchesDict[arrayToString(tempSolutionCoords, "")] = true
-						fmt.Println("")
-					} else {
-						fmt.Printf("match with those coords already found: %s\n\n", arrayToString(tempSolutionCoords, ""))
-					}
+					tempSolutionCoords := strconv.Itoa(row) + "," + strconv.Itoa(column) + " "
+					tempSolutionCoords += strconv.Itoa(row+1) + "," + strconv.Itoa(column) + " "
+					tempSolutionCoords += strconv.Itoa(row+2) + "," + strconv.Itoa(column) + " "
+					tempSolutionCoords += strconv.Itoa(row+3) + "," + strconv.Itoa(column)
+					fmt.Printf("found down solution at: %s\n\n", tempSolutionCoords)
 				}
 			}
 			//check downward slope diagonal
@@ -160,22 +115,11 @@ func main() {
 				tempSolution += wordSeachPuzzle[row+3][column+3]
 				if tempSolution == "XMAS" || tempSolution == "SAMX" {
 					matches++
-
-					tempSolutionCoords := []int{row, column}
-					tempSolutionCoords = append(tempSolutionCoords, row+1, column+1)
-					tempSolutionCoords = append(tempSolutionCoords, row+2, column+2)
-					tempSolutionCoords = append(tempSolutionCoords, row+3, column+3)
-					fmt.Printf("downward slope match temp solution: %s\n", tempSolution)
-					fmt.Printf("match found at %d\n", tempSolutionCoords)
-					slices.Sort(tempSolutionCoords)
-					fmt.Printf("sorted tempCoords: %d\n", tempSolutionCoords)
-					fmt.Printf("string sorted tempCoords: %s\n", arrayToString(tempSolutionCoords, ""))
-					if !matchesDict[arrayToString(tempSolutionCoords, "")] {
-						matchesDict[arrayToString(tempSolutionCoords, "")] = true
-						fmt.Println("")
-					} else {
-						fmt.Printf("match with those coords already found: %s\n\n", arrayToString(tempSolutionCoords, ""))
-					}
+					tempSolutionCoords := strconv.Itoa(row) + "," + strconv.Itoa(column) + " "
+					tempSolutionCoords += strconv.Itoa(row+1) + "," + strconv.Itoa(column+1) + " "
+					tempSolutionCoords += strconv.Itoa(row+2) + "," + strconv.Itoa(column+2) + " "
+					tempSolutionCoords += strconv.Itoa(row+3) + "," + strconv.Itoa(column+3)
+					fmt.Printf("found downward slope diagonal solution at: %s\n\n", tempSolutionCoords)
 				}
 			}
 			//check upward slope diagonal
@@ -186,28 +130,15 @@ func main() {
 				tempSolution += wordSeachPuzzle[row-3][column-3]
 				if tempSolution == "XMAS" || tempSolution == "SAMX" {
 					matches++
-
-					tempSolutionCoords := []int{row, column}
-					tempSolutionCoords = append(tempSolutionCoords, row-1, column-1)
-					tempSolutionCoords = append(tempSolutionCoords, row-2, column-2)
-					tempSolutionCoords = append(tempSolutionCoords, row-3, column-3)
-					fmt.Printf("upward slope match temp solution: %s\n", tempSolution)
-					fmt.Printf("match found at %d\n", tempSolutionCoords)
-					slices.Sort(tempSolutionCoords)
-					fmt.Printf("sorted tempCoords: %d\n", tempSolutionCoords)
-					fmt.Printf("string sorted tempCoords: %s\n", arrayToString(tempSolutionCoords, ""))
-					if !matchesDict[arrayToString(tempSolutionCoords, "")] {
-						matchesDict[arrayToString(tempSolutionCoords, "")] = true
-						fmt.Println("")
-					} else {
-						fmt.Printf("match with those coords already found: %s\n\n", arrayToString(tempSolutionCoords, ""))
-					}
+					tempSolutionCoords := strconv.Itoa(row) + "," + strconv.Itoa(column) + " "
+					tempSolutionCoords += strconv.Itoa(row-1) + "," + strconv.Itoa(column-1) + " "
+					tempSolutionCoords += strconv.Itoa(row-2) + "," + strconv.Itoa(column-2) + " "
+					tempSolutionCoords += strconv.Itoa(row-3) + "," + strconv.Itoa(column-3)
+					fmt.Printf("found foward slope diagonal solution at: %s\n\n", tempSolutionCoords)
 				}
 			}
 		}
 
 	}
 	fmt.Printf("Day 4 Part 1: %d\n", matches)
-	fmt.Printf("Day 4 Part 1 dict: %d\n", len(matchesDict))
-
 }
