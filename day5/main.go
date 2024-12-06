@@ -32,9 +32,9 @@ func checkRules(pages []string, rules [][]string) bool {
 	return true
 }
 
-func processInputText(content []string, delim string) [][]string {
+func processInputText(content string, delim string) [][]string {
 	processed := [][]string{}
-	for _, c := range content {
+	for _, c := range strings.Split(content, "\n") {
 		processed = append(processed, strings.Split(c, delim))
 	}
 	return processed
@@ -49,8 +49,8 @@ func main() {
 
 	content := strings.Split(string(contentBytes), "\n\n")
 
-	rules := processInputText(strings.Split(content[0], "\n"), "|")
-	pageNumberUpdates := processInputText(strings.Split(content[1], "\n"), ",")
+	rules := processInputText(content[0], "|")
+	pageNumberUpdates := processInputText(content[1], ",")
 
 	middlePageSum := 0
 	correctedMiddlePageSum := 0
