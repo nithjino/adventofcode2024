@@ -73,7 +73,6 @@ func main() {
 	}
 
 	for _, failedPageSet := range failedCheckPages {
-		fmt.Println(failedPageSet)
 		failedPages := failedPageSet[0]
 		failedRule := failedPageSet[1]
 		failedX := failedRule[0]
@@ -90,15 +89,9 @@ func main() {
 			failedY = failedRule[1]
 			failedXIndex = slices.Index(failedPages, failedX)
 			failedYIndex = slices.Index(failedPages, failedY)
-			fmt.Printf("Before swap: %s\n", failedPages)
-			fmt.Printf("failed rule: %s\n", failedRule)
-			fmt.Printf("failedXIndex: %d\n", failedXIndex)
-			fmt.Printf("failedYIndex: %d\n", failedYIndex)
 			failedPages[failedXIndex], failedPages[failedYIndex] = failedPages[failedYIndex], failedPages[failedXIndex]
-			fmt.Printf("After swap: %s\n", failedPages)
 			passTest, failedRule = checkRules(failedPages, rules)
 		}
-		fmt.Printf("\n%s now passes all rule checks\n", failedPages)
 		middlePageNum, err := strconv.Atoi(failedPages[len(failedPages)/2])
 
 		if err != nil {
@@ -109,6 +102,6 @@ func main() {
 
 	}
 
-	fmt.Printf("\nDay 5 Part 1: %d\n", middlePageSum)
+	fmt.Printf("Day 5 Part 1: %d\n", middlePageSum)
 	fmt.Printf("Day 5 Part 2: %d\n", correctedMiddlePageSum)
 }
