@@ -1,0 +1,358 @@
+movementDelta: [0 1]
+guardPosition: [4 6]
+lastRow: 10
+lastColumn: 10
+
+nextPlaceX: 4
+nextPlaceY: 7
+ran into obstacle at 4, 7. rotating guard position
+entering rotateGuardPosition with [0 1]
+match pointing up
+new movementDelta: [1 0]
+[. . . . # . . . . .]
+[. . . . . . . . . #]
+[. . . . . . . . . .]
+[. . # . . . . . . .]
+[. . . . . . . # . .]
+[. . . . . . . . . .]
+[. # . . ^ . . . . .]
+[. . . . . . . . # .]
+[# . . . . . . . . .]
+[. . . . . . # . . .]
+nextPlaceX: 5
+nextPlaceY: 6
+setting old guard position as marked
+advancing guard
+new guardPosition: [5 6]
+[. . . . # . . . . .]
+[. . . . . . . . . #]
+[. . . . . . . . . .]
+[. . # . . . . . . .]
+[. . . . . . X # . .]
+[. . . . . . . . . .]
+[. # . . ^ . . . . .]
+[. . . . . . . . # .]
+[# . . . . . . . . .]
+[. . . . . . # . . .]
+nextPlaceX: 6
+nextPlaceY: 6
+setting old guard position as marked
+advancing guard
+new guardPosition: [6 6]
+[. . . . # . . . . .]
+[. . . . . . . . . #]
+[. . . . . . . . . .]
+[. . # . . . . . . .]
+[. . . . . . X # . .]
+[. . . . . . X . . .]
+[. # . . ^ . . . . .]
+[. . . . . . . . # .]
+[# . . . . . . . . .]
+[. . . . . . # . . .]
+nextPlaceX: 7
+nextPlaceY: 6
+setting old guard position as marked
+advancing guard
+new guardPosition: [7 6]
+[. . . . # . . . . .]
+[. . . . . . . . . #]
+[. . . . . . . . . .]
+[. . # . . . . . . .]
+[. . . . . . X # . .]
+[. . . . . . X . . .]
+[. # . . ^ . X . . .]
+[. . . . . . . . # .]
+[# . . . . . . . . .]
+[. . . . . . # . . .]
+nextPlaceX: 8
+nextPlaceY: 6
+setting old guard position as marked
+advancing guard
+new guardPosition: [8 6]
+[. . . . # . . . . .]
+[. . . . . . . . . #]
+[. . . . . . . . . .]
+[. . # . . . . . . .]
+[. . . . . . X # . .]
+[. . . . . . X . . .]
+[. # . . ^ . X . . .]
+[. . . . . . X . # .]
+[# . . . . . . . . .]
+[. . . . . . # . . .]
+nextPlaceX: 9
+nextPlaceY: 6
+ran into obstacle at 9, 6. rotating guard position
+entering rotateGuardPosition with [1 0]
+match pointing right
+new movementDelta: [0 -1]
+[. . . . # . . . . .]
+[. . . . . . . . . #]
+[. . . . . . . . . .]
+[. . # . . . . . . .]
+[. . . . . . X # . .]
+[. . . . . . X . . .]
+[. # . . ^ . X . . .]
+[. . . . . . X . # .]
+[# . . . . . . . . .]
+[. . . . . . # . . .]
+nextPlaceX: 8
+nextPlaceY: 5
+setting old guard position as marked
+advancing guard
+new guardPosition: [8 5]
+[. . . . # . . . . .]
+[. . . . . . . . . #]
+[. . . . . . . . . .]
+[. . # . . . . . . .]
+[. . . . . . X # . .]
+[. . . . . . X . . .]
+[. # . . ^ . X . . .]
+[. . . . . . X . # .]
+[# . . . . . X . . .]
+[. . . . . . # . . .]
+nextPlaceX: 8
+nextPlaceY: 4
+setting old guard position as marked
+advancing guard
+new guardPosition: [8 4]
+[. . . . # . . . . .]
+[. . . . . . . . . #]
+[. . . . . . . . . .]
+[. . # . . . . . . .]
+[. . . . . . X # . .]
+[. . . . . . X . . .]
+[. # . . ^ . X . . .]
+[. . . . . . X . # .]
+[# . . . . X X . . .]
+[. . . . . . # . . .]
+nextPlaceX: 8
+nextPlaceY: 3
+setting old guard position as marked
+advancing guard
+new guardPosition: [8 3]
+[. . . . # . . . . .]
+[. . . . . . . . . #]
+[. . . . . . . . . .]
+[. . # . . . . . . .]
+[. . . . . . X # . .]
+[. . . . . . X . . .]
+[. # . . ^ . X . . .]
+[. . . . . . X . # .]
+[# . . . X X X . . .]
+[. . . . . . # . . .]
+nextPlaceX: 8
+nextPlaceY: 2
+setting old guard position as marked
+advancing guard
+new guardPosition: [8 2]
+[. . . . # . . . . .]
+[. . . . . . . . . #]
+[. . . . . . . . . .]
+[. . # . . . . . . .]
+[. . . . . . X # . .]
+[. . . . . . X . . .]
+[. # . . ^ . X . . .]
+[. . . . . . X . # .]
+[# . . X X X X . . .]
+[. . . . . . # . . .]
+nextPlaceX: 8
+nextPlaceY: 1
+setting old guard position as marked
+advancing guard
+new guardPosition: [8 1]
+[. . . . # . . . . .]
+[. . . . . . . . . #]
+[. . . . . . . . . .]
+[. . # . . . . . . .]
+[. . . . . . X # . .]
+[. . . . . . X . . .]
+[. # . . ^ . X . . .]
+[. . . . . . X . # .]
+[# . X X X X X . . .]
+[. . . . . . # . . .]
+nextPlaceX: 8
+nextPlaceY: 0
+ran into obstacle at 8, 0. rotating guard position
+entering rotateGuardPosition with [0 -1]
+match pointing down
+new movementDelta: [-1 0]
+[. . . . # . . . . .]
+[. . . . . . . . . #]
+[. . . . . . . . . .]
+[. . # . . . . . . .]
+[. . . . . . X # . .]
+[. . . . . . X . . .]
+[. # . . ^ . X . . .]
+[. . . . . . X . # .]
+[# . X X X X X . . .]
+[. . . . . . # . . .]
+nextPlaceX: 7
+nextPlaceY: 1
+setting old guard position as marked
+advancing guard
+new guardPosition: [7 1]
+[. . . . # . . . . .]
+[. . . . . . . . . #]
+[. . . . . . . . . .]
+[. . # . . . . . . .]
+[. . . . . . X # . .]
+[. . . . . . X . . .]
+[. # . . ^ . X . . .]
+[. . . . . . X . # .]
+[# X X X X X X . . .]
+[. . . . . . # . . .]
+nextPlaceX: 6
+nextPlaceY: 1
+ran into obstacle at 6, 1. rotating guard position
+entering rotateGuardPosition with [-1 0]
+match pointing left
+new movementDelta: [0 1]
+[. . . . # . . . . .]
+[. . . . . . . . . #]
+[. . . . . . . . . .]
+[. . # . . . . . . .]
+[. . . . . . X # . .]
+[. . . . . . X . . .]
+[. # . . ^ . X . . .]
+[. . . . . . X . # .]
+[# X X X X X X . . .]
+[. . . . . . # . . .]
+nextPlaceX: 7
+nextPlaceY: 2
+setting old guard position as marked
+advancing guard
+new guardPosition: [7 2]
+[. . . . # . . . . .]
+[. . . . . . . . . #]
+[. . . . . . . . . .]
+[. . # . . . . . . .]
+[. . . . . . X # . .]
+[. . . . . . X . . .]
+[. # . . ^ . X . . .]
+[. X . . . . X . # .]
+[# X X X X X X . . .]
+[. . . . . . # . . .]
+nextPlaceX: 7
+nextPlaceY: 3
+setting old guard position as marked
+advancing guard
+new guardPosition: [7 3]
+[. . . . # . . . . .]
+[. . . . . . . . . #]
+[. . . . . . . . . .]
+[. . # . . . . . . .]
+[. . . . . . X # . .]
+[. . . . . . X . . .]
+[. # . . ^ . X . . .]
+[. X X . . . X . # .]
+[# X X X X X X . . .]
+[. . . . . . # . . .]
+nextPlaceX: 7
+nextPlaceY: 4
+setting old guard position as marked
+advancing guard
+new guardPosition: [7 4]
+[. . . . # . . . . .]
+[. . . . . . . . . #]
+[. . . . . . . . . .]
+[. . # . . . . . . .]
+[. . . . . . X # . .]
+[. . . . . . X . . .]
+[. # . . ^ . X . . .]
+[. X X X . . X . # .]
+[# X X X X X X . . .]
+[. . . . . . # . . .]
+nextPlaceX: 7
+nextPlaceY: 5
+setting old guard position as marked
+advancing guard
+new guardPosition: [7 5]
+[. . . . # . . . . .]
+[. . . . . . . . . #]
+[. . . . . . . . . .]
+[. . # . . . . . . .]
+[. . . . . . X # . .]
+[. . . . . . X . . .]
+[. # . . ^ . X . . .]
+[. X X X X . X . # .]
+[# X X X X X X . . .]
+[. . . . . . # . . .]
+nextPlaceX: 7
+nextPlaceY: 6
+setting old guard position as marked
+advancing guard
+new guardPosition: [7 6]
+[. . . . # . . . . .]
+[. . . . . . . . . #]
+[. . . . . . . . . .]
+[. . # . . . . . . .]
+[. . . . . . X # . .]
+[. . . . . . X . . .]
+[. # . . ^ . X . . .]
+[. X X X X X X . # .]
+[# X X X X X X . . .]
+[. . . . . . # . . .]
+nextPlaceX: 7
+nextPlaceY: 7
+setting old guard position as marked
+advancing guard
+new guardPosition: [7 7]
+[. . . . # . . . . .]
+[. . . . . . . . . #]
+[. . . . . . . . . .]
+[. . # . . . . . . .]
+[. . . . . . X # . .]
+[. . . . . . X . . .]
+[. # . . ^ . X . . .]
+[. X X X X X X . # .]
+[# X X X X X X . . .]
+[. . . . . . # . . .]
+nextPlaceX: 7
+nextPlaceY: 8
+ran into obstacle at 7, 8. rotating guard position
+entering rotateGuardPosition with [0 1]
+match pointing up
+new movementDelta: [1 0]
+[. . . . # . . . . .]
+[. . . . . . . . . #]
+[. . . . . . . . . .]
+[. . # . . . . . . .]
+[. . . . . . X # . .]
+[. . . . . . X . . .]
+[. # . . ^ . X . . .]
+[. X X X X X X . # .]
+[# X X X X X X . . .]
+[. . . . . . # . . .]
+nextPlaceX: 8
+nextPlaceY: 7
+setting old guard position as marked
+advancing guard
+new guardPosition: [8 7]
+[. . . . # . . . . .]
+[. . . . . . . . . #]
+[. . . . . . . . . .]
+[. . # . . . . . . .]
+[. . . . . . X # . .]
+[. . . . . . X . . .]
+[. # . . ^ . X . . .]
+[. X X X X X X X # .]
+[# X X X X X X . . .]
+[. . . . . . # . . .]
+nextPlaceX: 9
+nextPlaceY: 7
+setting old guard position as marked
+advancing guard
+new guardPosition: [9 7]
+[. . . . # . . . . .]
+[. . . . . . . . . #]
+[. . . . . . . . . .]
+[. . # . . . . . . .]
+[. . . . . . X # . .]
+[. . . . . . X . . .]
+[. # . . ^ . X . . .]
+[. X X X X X X X # .]
+[# X X X X X X X . .]
+[. . . . . . # . . .]
+nextPlaceX: 10
+nextPlaceY: 7
+Day 6 Part 1: 18
